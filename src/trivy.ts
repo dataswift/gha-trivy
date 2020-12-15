@@ -1,7 +1,7 @@
 import fs from 'fs';
 import zlib from 'zlib';
 import tar from 'tar';
-const { Octokit } = require("@octokit/rest");
+import { Octokit } from '@octokit/rest';
 import fetch, { Response } from 'node-fetch';
 import { spawnSync, SpawnSyncReturns } from 'child_process';
 
