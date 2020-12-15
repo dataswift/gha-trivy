@@ -151,7 +151,6 @@ export class Trivy {
     });
 
     if (result.stdout && result.stdout.length > 0) {
-      console.debug(`Trivy result: ${result.stdout}`);
       const vulnerabilities: Vulnerability[] | string =
         option.format === 'json' ? JSON.parse(result.stdout) : result.stdout;
       if (vulnerabilities.length > 0) {

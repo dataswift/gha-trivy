@@ -13298,7 +13298,6 @@ class Trivy {
             maxBuffer: 1024 * 1024 * 100
         });
         if (result.stdout && result.stdout.length > 0) {
-            console.debug(`Trivy result: ${result.stdout}`);
             const vulnerabilities = option.format === 'json' ? JSON.parse(result.stdout) : result.stdout;
             if (vulnerabilities.length > 0) {
                 return vulnerabilities;
