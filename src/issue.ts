@@ -1,4 +1,4 @@
-import { Octokit } from '@octokit/rest';
+const { Octokit } = require("@octokit/rest");
 import * as github from '@actions/github';
 import { IssueOption, IssueResponse } from './interface';
 
