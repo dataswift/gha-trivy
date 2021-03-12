@@ -124,10 +124,9 @@ jobs:
         uses: atlassian/gajira-create@master
         with:
           project: DESK
-          issuetype: Internal Work Request
+          issuetype: Bug Report
           summary: Trivy has detected an incidenct ${{steps.trivy.outputs.issue_number}} with a Docker container
           description: ${{steps.trivy.outputs.html_url}}
-          fields: '{"Approval": "Yes"}'
 
       - name: Test Jira
         if: steps.jira.outputs.issue == ''
