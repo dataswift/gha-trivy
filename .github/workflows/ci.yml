@@ -42,7 +42,7 @@ jobs:
   test2:
     name: Test for with parameter
     runs-on: ubuntu-18.04
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: github.repository == 'dataswift/gha-trivy'
     steps:
       - uses: actions/checkout@v2.3.4
 
@@ -65,7 +65,7 @@ jobs:
   test3:
     name: Test for getting image name from enviroment variable
     runs-on: ubuntu-18.04
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: github.repository == 'dataswift/gha-trivy'
     steps:
       - uses: actions/checkout@v2.3.4
 
