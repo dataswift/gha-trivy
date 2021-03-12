@@ -123,7 +123,7 @@ jobs:
         if: steps.trivy.outputs.issue_number != ''
         uses: atlassian/gajira-create@master
         with:
-          project: TEST
+          project: DESK
           issuetype: Incident
           summary: Trivy has detected an incidenct ${{steps.trivy.outputs.issue_number}} with a Docker container
           description: ${{steps.trivy.outputs.html_url}}
