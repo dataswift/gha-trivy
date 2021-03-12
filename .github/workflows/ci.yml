@@ -83,3 +83,43 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue_label: trivy,vulnerability,test
           issue_title: Security Alert Test
+
+  test4:
+    name: Test Jira Integration
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn run build
+
+      - name: Pull docker image
+        run: docker pull ${{ env.IMAGE_NAME }}
+
+      - uses: ./
+        id: trivy
+        with:
+          issue: 'true'
+
+      - name: Test trivy
+        if: steps.trivy.outputs.issue_number == ''
+        run: exit 1
+
+      - name: Jira
+        id: jira
+        if: steps.trivy.outputs.issue_number != ''
+        uses: atlassian/gajira-create@master
+        with:
+          project: GA
+          issuetype: Incident
+          summary: Trivy has detected an incidenct ${{steps.trivy.outputs.issue_number}} with a Docker container
+          description: ${{steps.trivy.outputs.html_url}}
+
+      - name: Test Jira
+        if: steps.jira.outputs.issue == ''
+        run: exit 1
+
+
