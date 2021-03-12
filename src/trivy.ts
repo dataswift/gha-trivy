@@ -147,6 +147,7 @@ export class Trivy {
 
     const result: SpawnSyncReturns<string> = spawnSync(trivyPath, args, {
       encoding: 'utf-8',
+      maxBuffer: 1024 * 1024 * 100
     });
 
     if (result.stdout && result.stdout.length > 0) {
