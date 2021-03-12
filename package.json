@@ -28,7 +28,7 @@
     "@types/tar": "^4.0.3",
     "axios": "^0.21.1",
     "node-fetch": "^2.6.1",
-    "tar": "^5.0.5"
+    "tar": "^6.1.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
