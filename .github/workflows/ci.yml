@@ -102,7 +102,10 @@ jobs:
       - uses: ./
         id: trivy
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue: 'true'
+          issue_label: trivy,vulnerability,test
+          issue_title: Security Alert Test
 
       - name: Test trivy
         if: steps.trivy.outputs.issue_number == ''
