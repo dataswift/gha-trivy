@@ -124,8 +124,8 @@ jobs:
         uses: atlassian/gajira-create@master
         with:
           project: DESK
-          issuetype: Bug Report
-          summary: Trivy has detected an incidenct ${{steps.trivy.outputs.issue_number}} with a Docker container
+          issuetype: Trivy Incidents
+          summary: Trivy has detected an incident with a Docker container
           description: ${{steps.trivy.outputs.html_url}}
 
       - name: Test Jira
