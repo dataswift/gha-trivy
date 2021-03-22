@@ -93,3 +93,6 @@ typings/
 .dynamodb/
 
 .vscode/
+
+*.DS_Store
+*.swp
