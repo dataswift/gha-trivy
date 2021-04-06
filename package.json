@@ -24,7 +24,7 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^1.1.0",
-    "@types/node-fetch": "^2.5.8",
+    "@types/node-fetch": "^2.5.9",
     "@types/tar": "^4.0.4",
     "axios": "^0.21.1",
     "node-fetch": "^2.6.1",
