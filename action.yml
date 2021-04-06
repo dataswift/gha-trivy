@@ -1,4 +1,4 @@
-name: 'Trivy Action'
+name: 'GHA Trivy'
 description: 'Scan docker image vulnerability using Trivy and create GitHub Issue'
 author: 'homoluctus'
 inputs:
@@ -55,5 +55,5 @@ runs:
   main: 'dist/index.js'
 
 branding:
-  icon: 'search'
-  color: 'blue'
+  icon: 'pocket'
+  color: 'purple'
