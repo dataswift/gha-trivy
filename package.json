@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",
-    "@actions/github": "^1.1.0",
+    "@actions/github": "^4.0.0",
     "@types/node-fetch": "^2.5.10",
     "@types/tar": "^4.0.4",
     "axios": "^0.21.1",
